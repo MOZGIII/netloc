@@ -1,0 +1,9 @@
+[package]
+name = "netloc-stdout"
+version = "0.1.0"
+authors = ["MOZGIII <mike-n@narod.ru>"]
+edition = "2018"
+
+[dependencies]
+netloc-core = { version = "0.1", path = "../netloc-core" }
+async-trait = "0.1"

@@ -1,0 +1,20 @@
+[package]
+name = "netloc"
+version = "0.1.0"
+authors = ["MOZGIII <mike-n@narod.ru>"]
+edition = "2018"
+
+[dependencies]
+netloc-core = { version = "0.1", path = "./netloc-core" }
+netloc-stdout = { version = "0.1", path = "./netloc-stdout" }
+netloc-discord = { version = "0.1", path = "./netloc-discord" }
+anyhow = "1"
+async-trait = "0.1"
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+reqwest = "0.11"
+parse_duration = "2"
+thiserror = "1"
+structopt = "0.3"
+
+[workspace]
+members = ["./netloc-core", "./netloc-discord", "./netloc-stdout"]
