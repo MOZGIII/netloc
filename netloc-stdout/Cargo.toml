@@ -1,8 +1,10 @@
 [package]
 name = "netloc-stdout"
 version = "0.1.0"
+description = "Print the IP address to stdout."
 authors = ["MOZGIII <mike-n@narod.ru>"]
 edition = "2018"
+license = "MIT"
 
 [dependencies]
 netloc-core = { version = "0.1", path = "../netloc-core" }
