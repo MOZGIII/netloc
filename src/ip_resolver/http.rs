@@ -80,8 +80,9 @@ impl Resolver {
             buf.extend_from_slice(&chunk);
         }
         let utf8 = std::str::from_utf8(&buf)?;
-        debug!(message = "parsing IP address", ip_address = ?utf8);
-        let ip_address = utf8.parse()?;
+        let trimmed = utf8.trim();
+        debug!(message = "parsing IP address", ip_address = ?trimmed);
+        let ip_address = trimmed.parse()?;
         Ok(ip_address)
     }
 }
