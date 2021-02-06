@@ -17,7 +17,7 @@ pub struct Reconciler<E: std::fmt::Debug> {
     /// The delay between the reconciliation attempts.
     pub delay: Duration,
     /// An IP resolver.
-    pub ip_resolver: ip_resolver::http::Http,
+    pub ip_resolver: ip_resolver::http::Resolver,
     /// A list of reporters to use.
     pub reporters: Vec<Box<dyn Reporter<Error = E>>>,
     /// The state to maintain.

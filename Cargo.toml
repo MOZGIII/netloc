@@ -12,13 +12,23 @@ netloc-stdout = { version = "0.1", path = "./netloc-stdout" }
 netloc-discord = { version = "0.1", path = "./netloc-discord" }
 anyhow = "1"
 async-trait = "0.1"
+bytes = "1"
+dns-lookup = "1"
+hyper = { version = "0.14", features = ["client", "tcp", "http1", "http2"] }
+hyper-system-resolver = "0.3"
+hyper-tls = "0.5"
 parse_duration = "2"
-reqwest = "0.11"
 structopt = "0.3"
 thiserror = "1"
 tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
 tracing = "0.1"
 tracing-subscriber = "0.2"
+
+[target."cfg(windows)".dependencies]
+winapi = { version = "^0.3", default-features = false, features = ["ws2def"] }
+
+[target."cfg(unix)".dependencies]
+libc = { version = "^0.2" }
 
 [workspace]
 members = ["./netloc-core", "./netloc-discord", "./netloc-stdout"]
