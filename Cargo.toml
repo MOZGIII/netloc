@@ -1,6 +1,6 @@
 [package]
 name = "netloc"
-version = "0.1.0"
+version = "0.1.1"
 description = "Detect IP address and report it."
 authors = ["MOZGIII <mike-n@narod.ru>"]
 edition = "2018"
