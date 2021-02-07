@@ -5,6 +5,7 @@ description = "Detect IP address and report it."
 authors = ["MOZGIII <mike-n@narod.ru>"]
 edition = "2018"
 license = "MIT"
+repository = "https://github.com/MOZGIII/netloc"
 
 [dependencies]
 netloc-core = { version = "0.1", path = "./netloc-core" }
