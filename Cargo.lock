@@ -623,12 +623,10 @@ dependencies = [
 name = "netloc-discord"
 version = "0.2.1"
 dependencies = [
- "anyhow",
  "async-trait",
  "netloc-core",
  "reqwest",
  "serde",
- "tokio",
 ]
 
 [[package]]
