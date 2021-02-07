@@ -8,7 +8,7 @@ license = "MIT"
 
 [dependencies]
 netloc-core = { version = "0.1", path = "../netloc-core" }
+anyhow = "1"
 async-trait = "0.1"
 tokio = "1"
 webhook = "1"
-anyhow = "1"
