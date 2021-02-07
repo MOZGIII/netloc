@@ -505,9 +505,9 @@ dependencies = [
 
 [[package]]
 name = "hyper-system-resolver"
-version = "0.3.0"
+version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "82376a420a12c881a5edf7deef3e5ec5f605cebdc06d3a2bca413cd38f7adbb5"
+checksum = "12f3e7696766b62825bf735a1df9d8b727525b83ae5427ee955258800858bd73"
 dependencies = [
  "derivative",
  "derive_builder",
