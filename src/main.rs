@@ -8,6 +8,7 @@ use hyper_system_resolver::addr_info_hints::AddressFamily;
 use netloc::state::State;
 use netloc::{ip_resolver, reconciler::Reconciler};
 use netloc_core::reporter::Reporter;
+use tracing::warn;
 
 use structopt::StructOpt;
 
@@ -75,7 +76,7 @@ async fn main() {
             &discord_webhook_url,
         )));
     } else {
-        eprintln!("Warn: discord webhook URL not set, skipping discord reporting");
+        warn!("discord webhook URL not set, skipping discord reporting");
     }
 
     let client = ip_resolver::http::build_client(match requested_address_type {
