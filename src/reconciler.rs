@@ -29,11 +29,11 @@ impl<E: std::fmt::Debug> Reconciler<E> {
     pub async fn run(&mut self) -> Result<Infallible, Error<E>> {
         loop {
             debug!(
-                message = "waiting for the delay before reconcillation",
+                message = "waiting for the delay before reconciliation",
                 delay_ms = %self.delay.as_millis(),
             );
             tokio::time::sleep(self.delay).await;
-            debug!(message = "reconsiling");
+            debug!(message = "reconciling");
             self.reconcile_once().await?;
         }
     }
