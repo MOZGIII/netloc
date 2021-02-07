@@ -1,6 +1,6 @@
 [package]
 name = "netloc-discord"
-version = "0.1.0"
+version = "0.2.0"
 description = "Report an IP address update to Discord."
 authors = ["MOZGIII <mike-n@narod.ru>"]
 edition = "2018"

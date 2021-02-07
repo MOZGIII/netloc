@@ -10,7 +10,7 @@ repository = "https://github.com/MOZGIII/netloc"
 [dependencies]
 netloc-core = { version = "0.1", path = "./netloc-core" }
 netloc-stdout = { version = "0.1", path = "./netloc-stdout" }
-netloc-discord = { version = "0.1", path = "./netloc-discord" }
+netloc-discord = { version = "0.2", path = "./netloc-discord" }
 anyhow = "1"
 async-trait = "0.1"
 bytes = "1"
