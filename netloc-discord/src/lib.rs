@@ -5,7 +5,12 @@
 use async_trait::async_trait;
 use netloc_core::reporter::{Data, Reporter};
 pub use reqwest::Client;
-use webhook::Message;
+use serde::Serialize;
+
+#[derive(Debug, Serialize)]
+struct Message {
+    content: String,
+}
 
 /// A [`Reporter`] that sends the data to the Discord via a Webhook.
 pub struct Discord {
@@ -33,9 +38,9 @@ impl Reporter for Discord {
     type Error = Box<dyn std::error::Error>;
 
     async fn report(&self, data: &Data) -> Result<(), Self::Error> {
-        let mut message = Message::new();
-        message.content(&data.ip);
-
+        let message = Message {
+            content: data.ip.clone(),
+        };
         self.client
             .post(&self.webhook_url)
             .json(&message)

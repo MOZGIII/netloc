@@ -11,5 +11,5 @@ netloc-core = { version = "0.1", path = "../netloc-core" }
 anyhow = "1"
 async-trait = "0.1"
 reqwest = { version = "0.11", features = ["json"] }
+serde = { version = "1", features = ["derive"] }
 tokio = "1"
-webhook = "1"
