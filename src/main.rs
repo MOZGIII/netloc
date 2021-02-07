@@ -71,9 +71,9 @@ async fn main() {
         vec![Box::new(netloc_stdout::Stdout)];
 
     if let Some(discord_webhook_url) = discord_webhook_url {
-        reporters.push(Box::new(netloc_discord::Discord {
-            webhook: netloc_discord::Webhook::from_url(&discord_webhook_url),
-        }));
+        reporters.push(Box::new(netloc_discord::Discord::from_url(
+            &discord_webhook_url,
+        )));
     } else {
         eprintln!("Warn: discord webhook URL not set, skipping discord reporting");
     }
