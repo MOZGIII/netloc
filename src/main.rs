@@ -46,6 +46,10 @@ struct Opt {
     #[structopt(long, env)]
     pub discord_webhook_url: Option<String>,
 
+    /// HTTP URL to report the updated IP address in plain text.
+    #[structopt(long, env)]
+    pub http_request_url: Option<String>,
+
     /// The address type to request.
     /// Currently this controls how the hostname of the HTTP is resolved.
     #[structopt(short = "t", long, env, default_value = "any")]
@@ -64,6 +68,7 @@ async fn main() {
         url,
         delay,
         discord_webhook_url,
+        http_request_url,
         requested_address_type,
         max_body_size,
     } = Opt::from_args();
@@ -77,6 +82,14 @@ async fn main() {
         )));
     } else {
         warn!("discord webhook URL not set, skipping discord reporting");
+    }
+
+    if let Some(http_request_url) = http_request_url {
+        reporters.push(Box::new(netloc_http_request::HttpRequest::from_url(
+            &http_request_url,
+        )));
+    } else {
+        warn!("HTTP URL not set, skipping HTTP request reporting");
     }
 
     let client = ip_resolver::http::build_client(match requested_address_type {

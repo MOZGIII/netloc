@@ -602,6 +602,7 @@ dependencies = [
  "libc",
  "netloc-core",
  "netloc-discord",
+ "netloc-http-request",
  "netloc-stdout",
  "parse_duration",
  "structopt",

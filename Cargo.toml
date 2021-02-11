@@ -11,6 +11,7 @@ repository = "https://github.com/MOZGIII/netloc"
 netloc-core = { version = "0.1", path = "./netloc-core" }
 netloc-stdout = { version = "0.1", path = "./netloc-stdout" }
 netloc-discord = { version = "0.2", path = "./netloc-discord" }
+netloc-http-request = { version = "0.1", path = "./netloc-http-request" }
 anyhow = "1"
 async-trait = "0.1"
 bytes = "1"
