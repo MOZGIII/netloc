@@ -630,6 +630,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "netloc-http-request"
+version = "0.1.0"
+dependencies = [
+ "async-trait",
+ "netloc-core",
+ "reqwest",
+]
+
+[[package]]
 name = "netloc-stdout"
 version = "0.1.0"
 dependencies = [

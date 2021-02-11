@@ -32,4 +32,9 @@ winapi = { version = "^0.3", default-features = false, features = ["ws2def"] }
 libc = { version = "^0.2" }
 
 [workspace]
-members = ["./netloc-core", "./netloc-discord", "./netloc-stdout"]
+members = [
+  "./netloc-core",
+  "./netloc-discord",
+  "./netloc-stdout",
+  "./netloc-http-request",
+]

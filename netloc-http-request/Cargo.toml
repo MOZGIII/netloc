@@ -1,0 +1,12 @@
+[package]
+name = "netloc-http-request"
+version = "0.1.0"
+description = "Report an IP address update via an HTTP request."
+authors = ["MOZGIII <mike-n@narod.ru>"]
+edition = "2018"
+license = "MIT"
+
+[dependencies]
+netloc-core = { version = "0.1", path = "../netloc-core" }
+async-trait = "0.1"
+reqwest = "0.11"
