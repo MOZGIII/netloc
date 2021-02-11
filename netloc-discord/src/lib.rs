@@ -1,4 +1,4 @@
-//! Report as IP address update to Discord.
+//! Report an IP address update to Discord.
 
 #![warn(missing_docs)]
 
