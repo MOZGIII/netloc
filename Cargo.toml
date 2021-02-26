@@ -17,7 +17,7 @@ async-trait = "0.1"
 bytes = "1"
 dns-lookup = "1"
 hyper = { version = "0.14", features = ["client", "tcp", "http1", "http2"] }
-hyper-system-resolver = "0.4"
+hyper-system-resolver = "0.5"
 hyper-tls = "0.5"
 parse_duration = "2"
 structopt = "0.3"
