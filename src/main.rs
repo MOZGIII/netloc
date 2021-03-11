@@ -2,7 +2,10 @@
 
 #![warn(missing_docs)]
 
-use std::str::FromStr;
+#[macro_use]
+extern crate tracing;
+
+use std::{str::FromStr, time::Duration};
 
 use hyper_system_resolver::addr_info_hints::AddressFamily;
 use netloc::state::State;
@@ -109,11 +112,19 @@ async fn main() {
         current_ip: State::uninitialized(),
     };
 
-    if let Err(err) = reconciler.run().await {
-        eprintln!("Reconciliation failed with an error: {}", err);
-        std::process::exit(1);
+    loop {
+        match reconciler.run().await {
+            Err(error) => {
+                let restart_delay = Duration::from_secs(10);
+                error!(
+                    message = "reconciler loop exited with an error, will restart after a delay",
+                    %error,
+                    restart_delay_ms = %restart_delay.as_millis(),
+                );
+                tokio::time::sleep(restart_delay).await;
+                continue;
+            }
+            Ok(_) => unreachable!("infallible reached"),
+        }
     }
-
-    // No non-error exit condition.
-    unreachable!();
 }
