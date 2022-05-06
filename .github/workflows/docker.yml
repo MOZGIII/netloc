@@ -47,7 +47,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and push
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v3
         with:
           # TODO: add 32-bit platforms after the fs emulation bug is fixed in QEMU.
           # Ref: https://bugs.launchpad.net/qemu/+bug/1805913
